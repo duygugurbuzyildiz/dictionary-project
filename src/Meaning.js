@@ -1,23 +1,26 @@
 import React from "react";
+import "./Meaning.css";
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default function Meaning(props){
     console.log(props.meaning);
     return (<div className="Meaning">
-       <h3> {props.meaning.partOfSpeech}</h3>
+       <h4> {props.meaning.partOfSpeech}</h4>
        {props.meaning.definitions.map(function(definition, index){
            return (
                <div key={index}> 
                {definition.definition}
                <br />
-               <em>{definition.example}</em>
+               <em><p className="opacity-50">Example: {definition.example}</p></em>
                </div>
            )
        })}
+       <h5>Synonyms</h5>
         {props.meaning.definitions[0].synonyms.map(function(synonyms, index){
-            return (
-                <div key={index}> 
-                    {synonyms}
-                </div>)
-            })}
+                return (
+                    <div key={index} className="synonyms"> 
+                        {synonyms}
+                    </div>)
+                })}
     </div>);
 }

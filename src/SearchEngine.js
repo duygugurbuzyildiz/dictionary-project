@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import Results from "./Results";
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default function SearchEngine(){
     let [keyword, setKeyword] = useState(null);
@@ -25,8 +26,8 @@ export default function SearchEngine(){
     return (
     <div className="SearchEngine">
         <form onSubmit={submit}> 
-            <input className="search" placeholder="Insert a word..." autoFocus={true} onChange={handleKeywordChange}/>
-            <button>Submit</button>
+            <input className="search mb-3" placeholder="Insert a word..." autoFocus={true} onChange={handleKeywordChange}/>
+            <button className="btn-light">Search</button>
         </form> 
         <Results result={result}/>
     </div>);

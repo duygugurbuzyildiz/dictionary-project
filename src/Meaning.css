@@ -1,0 +1,15 @@
+h4{
+    color: chocolate;
+}
+
+h5{
+    color: crimson;
+}
+
+.Meaning{
+    text-align: left;
+}
+
+.synonyms{
+    float: inline-table;
+}
