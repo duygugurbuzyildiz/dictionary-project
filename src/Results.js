@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 export default function Results(props){
     if (props.result){
 return (
-    <div className="Results">
+    <div className="card mb-5 mt-5 Results">
         <h2> {props.result.word}</h2> 
         {props.result.phonetics.map(function phonetics(phonetic, index){
             return (<div key={index}> <Phonetic phonetic={phonetic} /></div>);
