@@ -9,8 +9,6 @@ export default function SearchEngine(){
 
     function handleResponse(response){
         setResult(response.data[0]);
-        console.log(response.data[0]);
-        console.log(response.data[0].meanings[0].definitions[0].definition)
     }
 
     function submit(event){
