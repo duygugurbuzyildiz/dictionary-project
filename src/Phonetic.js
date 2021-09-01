@@ -1,11 +1,13 @@
 import React from "react";
 
 export default function Phonetic (props){
-    console.log(props.phonetic);
-    
+        let audio = new Audio(props.phonetic.audio)
+      
+        const start = () => {
+          audio.play()
+        }
     return (<div className="Phonetic">
-        <a href={props.phonetic.audio} target="_blank" rel="noreferrer">🔊</a>
-        <br/>
-        <strong className="opacity-50">({props.phonetic.text})</strong>
+        <button className="border-0" onClick={start}>🔈</button>
+        <span> <strong className="opacity-50 fs-5">({props.phonetic.text})</strong> </span>
     </div>); 
 }

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import Results from "./Results";
+import "./SearchEngine.css";
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function SearchEngine(){
@@ -23,10 +24,13 @@ export default function SearchEngine(){
     }
     return (
     <div className="SearchEngine">
-        <form onSubmit={submit}> 
-            <input className="search mb-3" placeholder="Insert a word..." autoFocus={true} onChange={handleKeywordChange}/>
-            <button className="btn-light">Search</button>
-        </form> 
+        <section>
+            <form onSubmit={submit}> 
+                <input className="search mb-3 mt-3 rounded-pill border border-1" placeholder="  Insert a word..." onChange={handleKeywordChange}/>
+                <button className="rounded-pill border border-1 searchButton" autoFocus={true}>Search</button>
+            </form>
+        </section>
         <Results result={result}/>
+        
     </div>);
 }

@@ -7,17 +7,20 @@ import 'bootstrap/dist/css/bootstrap.css';
 export default function Results(props){
     if (props.result){
 return (
-    <div className="card mb-5 mt-5 Results">
-        <h2> {props.result.word}</h2> 
-        {props.result.phonetics.map(function phonetics(phonetic, index){
-            return (<div key={index}> <Phonetic phonetic={phonetic} /></div>);
-        })}
+    <div className="mb-5 mt-5 Results">
+        <section className="mb-5 word">
+            <h2 className="mt-1"> {props.result.word}</h2> 
+            {props.result.phonetics.map(function phonetics(phonetic, index){
+                return (<div key={index}> <Phonetic phonetic={phonetic} /></div>);
+            })}
+        </section>
         {props.result.meanings.map(function(meaning, index){
             return (
-                <div key={index}> 
+                <section className="definition mb-5" key={index}> 
                     <Meaning meaning={meaning}/>
-                </div>);
-        })}
+                </section>);
+            })}
+        
     </div>);
 } else {return null;}
 }
